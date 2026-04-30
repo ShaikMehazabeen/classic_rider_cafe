@@ -178,12 +178,12 @@
 
   /* ===== MENU ===== */
   .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2rem}
-  .menu-card{background:#fff;border-radius:22px;box-shadow:0 15px 40px rgba(0,0,0,.08);transition:all .4s;text-align:center;position:relative;overflow:hidden;border:1px solid #f0e8dc;display:flex;flex-direction:column}
+  .menu-card{background:#fff;border-radius:22px;padding:2rem;box-shadow:0 15px 40px rgba(0,0,0,.08);transition:all .4s;text-align:center;position:relative;overflow:hidden;border:1px solid #f0e8dc}
+  .menu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--orange),var(--gold))}
   .menu-card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(255,107,53,.2)}
-  .menu-img{width:100%;height:200px;object-fit:cover;display:block}
-  .menu-body{padding:1.6rem 1.6rem 2rem;position:relative}
-  .menu-body::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--gold))}
-  .menu-card h3{font-size:1.4rem;margin:.6rem 0;color:var(--ink)}
+  .menu-icon{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--amber));display:flex;align-items:center;justify-content:center;margin:0 auto 1.4rem;box-shadow:0 12px 30px rgba(255,107,53,.4)}
+  .menu-icon i{font-size:3.4rem;color:#fff}
+  .menu-card h3{font-size:1.4rem;margin-bottom:.6rem;color:var(--ink)}
   .menu-tag{display:inline-block;background:#fff3eb;color:var(--orange);font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;margin-bottom:.8rem;font-weight:600}
   .price{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--orange);margin:.6rem 0 1rem;letter-spacing:2px}
   .menu-card p{color:#666;font-size:.95rem;line-height:1.6}
@@ -289,12 +289,12 @@
     <h2 class="section-title reveal">Photo Gallery</h2>
     <p class="section-subtitle reveal">Real moments served hot from our kitchen</p>
     <div class="gallery-grid">
-      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('images/exterior.jpeg')"></div><div class="gallery-overlay">🏍️ Cafe Vibes</div></div>
-      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('images/shawarma.jpeg')"></div><div class="gallery-overlay">🥙 Fresh Shawarma</div></div>
-      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('images/chicken.png')"></div><div class="gallery-overlay">🍗 Grilled Chicken</div></div>
-      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('images/peripei.jpeg')"></div><div class="gallery-overlay">🌶️ Peri Peri Heat</div></div>
-      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('images/interior.jpeg')"></div><div class="gallery-overlay">✨ Cozy Interior</div></div>
-      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('images/making.webp')"></div><div class="gallery-overlay">👨‍🍳 Live Kitchen</div></div>
+      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800')"></div><div class="gallery-overlay">🏍️ Cafe Vibes</div></div>
+      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800')"></div><div class="gallery-overlay">🥙 Fresh Shawarma</div></div>
+      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=800')"></div><div class="gallery-overlay">🍗 Grilled Chicken</div></div>
+      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800')"></div><div class="gallery-overlay">🌶️ Peri Peri Heat</div></div>
+      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800')"></div><div class="gallery-overlay">✨ Cozy Interior</div></div>
+      <div class="gallery-item reveal"><div class="img-bg" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800')"></div><div class="gallery-overlay">👨‍🍳 Live Kitchen</div></div>
     </div>
   </div>
 </section>
@@ -305,7 +305,7 @@
     <h2 class="section-title reveal">Our Story</h2>
     <p class="section-subtitle reveal">Born from a love for good food and the open road</p>
     <div class="about-grid" style="margin-top:3rem">
-      <div class="about-image reveal"><img src="images/logo.png" style="width: 90%; height: 90%; border-radius:3px;"></div>
+      <div class="about-image reveal"><i class="fas fa-motorcycle"></i></div>
       <div class="about-content reveal">
         <h3>🏆 Tadipatri's Best Kept Flavour Secret</h3>
         <p>From the very first day, Classic Rider Cafe has been a passion project — a place where bikers, families and food lovers gather over signature shawarmas, smoky grilled chicken and fiery peri peri specials, all crafted personally under the supervision of <strong>Mr. Maruthi Reddy</strong>.</p>
@@ -326,33 +326,52 @@
   <div class="container">
     <h2 class="section-title reveal">Menu Highlights</h2>
     <p class="section-subtitle reveal">Crowd favourites you simply must try</p>
-    <div class="menu-grid" id="menuGrid"></div>
-  </div>
-</section>
-
-<script>
-  // ===== MENU DATA (edit here to update cards) =====
-  const MENU = [
-    { tag:'Bestseller',  name:'Classic Shawarma',   price:'₹180', img:'images/shawarma.jpeg', desc:'Slow-grilled chicken with Arabian spices, fresh veggies and our signature garlic sauce in soft pita.' },
-    { tag:"Chef's Pick", name:'Grilled Chicken',    price:'₹250', img:'images/chicken.png', desc:'Marinated overnight in our secret blend, then grilled to smoky, juicy perfection.' },
-    { tag:'Spicy 🔥',    name:'Peri Peri Chicken',  price:'₹280', img:'images/peripei.jpeg', desc:'African-style peri peri marination with extra fiery kick. Bold and bright.' },
-    { tag:'New',         name:'Rider Burger',       price:'₹220', img:'images/burger.jpeg', desc:'Double-stacked chicken patty, melted cheese, smoky sauce — fuel your next ride.' },
-    { tag:'Family',      name:'panner sandwich',     price:'₹320', img:'images/sandwich.jpeg', desc:'Crispy outer bread soft panner cubes inside,filled with onions and a drizzle of mint mayo.' },
-    { tag:'Beverage',    name:'Cold Coffee Shake',  price:'₹120', img:'images/coffee.jpeg', desc:'Thick, creamy and topped with chocolate — the perfect cool-down after a hot meal.' },
-  ];
-  document.getElementById('menuGrid').innerHTML = MENU.map(m => `
-    <div class="menu-card reveal">
-      <img class="menu-img" src="${m.img}" alt="${m.name}" loading="lazy"
-           onerror="this.src='https://placehold.co/600x400/ff6b35/ffffff?text=${encodeURIComponent(m.name)}'">
-      <div class="menu-body">
-        <span class="menu-tag">${m.tag}</span>
-        <h3>${m.name}</h3>
-        <div class="price">${m.price}</div>
-        <p>${m.desc}</p>
+    <div class="menu-grid">
+      <div class="menu-card reveal">
+        <div class="menu-icon"><i class="fas fa-bread-slice"></i></div>
+        <span class="menu-tag">Bestseller</span>
+        <h3>Classic Shawarma</h3>
+        <div class="price">₹180</div>
+        <p>Slow-grilled chicken with authentic Arabian spices, fresh veggies and our signature garlic sauce, wrapped in soft pita.</p>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-icon"><i class="fas fa-drumstick-bite"></i></div>
+        <span class="menu-tag">Chef's Pick</span>
+        <h3>Grilled Chicken</h3>
+        <div class="price">₹250</div>
+        <p>Marinated overnight in our secret blend, then grilled to smoky, juicy perfection. Served with mint chutney.</p>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-icon"><i class="fas fa-pepper-hot"></i></div>
+        <span class="menu-tag">Spicy 🔥</span>
+        <h3>Peri Peri Chicken</h3>
+        <div class="price">₹280</div>
+        <p>African-style peri peri marination with extra fiery kick. For those who like it bold and bright.</p>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-icon"><i class="fas fa-hamburger"></i></div>
+        <span class="menu-tag">New</span>
+        <h3>Rider Burger</h3>
+        <div class="price">₹220</div>
+        <p>Double-stacked chicken patty, melted cheese, smoky sauce — built to fuel your next ride.</p>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-icon"><i class="fas fa-pizza-slice"></i></div>
+        <span class="menu-tag">Family</span>
+        <h3>Tandoori Pizza</h3>
+        <div class="price">₹320</div>
+        <p>Crispy thin crust topped with tandoori chicken, onions and a drizzle of mint mayo.</p>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-icon"><i class="fas fa-mug-hot"></i></div>
+        <span class="menu-tag">Beverage</span>
+        <h3>Cold Coffee Shake</h3>
+        <div class="price">₹120</div>
+        <p>Thick, creamy and topped with chocolate — the perfect cool-down after a hot meal.</p>
       </div>
     </div>
-  `).join('');
-</script>
+  </div>
+</section>
 
 <!-- REVIEWS -->
 <section id="reviews" class="section" style="background:#fff">
