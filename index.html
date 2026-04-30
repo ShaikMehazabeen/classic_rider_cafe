@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Rider Cafe - Tadipatri | Best Food Experience</title>
+    <meta name="description" content="Classic Rider Cafe Tadipatri - Excellent food, top-notch hygiene, quick service. Shawarma, Grilled Chicken, Peri Peri Chicken & more. 5.0 ⭐ Rating">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #ffd700;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://lh5.googleusercontent.com/p/AF1QipM4bYkZqZqZqZqZqZqZqZqZqZqZqZqZqZqZqZq=w1920-h1080') center/cover;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .hero-content .rating-hero {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            background: rgba(255,215,0,0.9);
+            color: #333;
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(255,215,0,0.4);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.4s both;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 16px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid rgba(255,255,255,0.9);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.95);
+            color: #ff6b35;
+            transform: translateY(-5px);
+        }
+
+        /* Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+            padding: 2.5rem 2rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            background: #ff6b35;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            font-size: 1.5rem;
+            width: 40px;
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .menu-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ff6b35;
+            margin: 1rem 0 1.5rem;
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            gap: 2rem;
+            transition: all 0.4s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .review-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(255,107,53,0.3);
+        }
+
+        .review-content h4 {
+            color: #ff6b35;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .review-text {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-item i {
+            font-size: 3.5rem;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .contact-item h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .cafe-hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 30px;
+            margin-top: 4rem;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #333, #222);
+            color: white;
+            text-align: center;
+            padding: 4rem 0 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .social-links a {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.4s;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(255,107,53,0.4);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .review-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-motorcycle"></i>
+                Classic Rider Cafe
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Photos</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="rating-hero">
+                <i class="fas fa-star"></i> 5.0 (9 Reviews)
+            </div>
+            <h1>Classic Rider Cafe</h1>
+            <p>Excellent Food • Top-Notch Hygiene • Quick & Friendly Service</p>
+            <div class="cta-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> View Menu
+                </a>
+                <a href="#gallery" class="btn btn-secondary">
+                    <i class="fas fa-images"></i> See Photos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - REAL PHOTOS FROM GOOGLE MAPS -->
+    <section id="gallery" class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">🍽️ Photo Gallery</h2>
+            <p class="section-subtitle">Real moments from Classic Rider Cafe - Tadipatri</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/exterior.jpeg" alt="Classic Rider Cafe Exterior">
+                    <div class="gallery-overlay">
+                        <h4>🏍️ Cafe Exterior</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/shawarma.jpeg" alt="Shawarma Closeup">
+                    <div class="gallery-overlay">
+                        <h4>🥙 Fresh Shawarma</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/chicken.png" alt="Grilled Chicken Plate">
+                    <div class="gallery-overlay">
+                        <h4>🍗 Grilled Chicken</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/peripei.jpeg" alt="Peri Peri Chicken">
+                    <div class="gallery-overlay">
+                        <h4>🌶️ Peri Peri Chicken</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/interior.jpeg" alt="Cafe Interior">
+                    <div class="gallery-overlay">
+                        <h4>✨ Cafe Interior</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/making.webp" alt="Food Preparation">
+                    <div class="gallery-overlay">
+                        <h4>👨‍🍳 Live Preparation</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">Proudly serving Tadipatri with excellence since day one</p>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>🏆 Best Cafe Experience in Tadipatri</h3>
+                    <p>Discover fantastic flavors with our signature shawarma, grilled chicken, and peri peri chicken. Every dish is crafted with fresh ingredients under the supervision of Mr. Maruthi Reddy.</p>
+                    <p>We maintain <strong>top-notch hygiene</strong> standards with <strong>quick and friendly service</strong>. Perfect for dine-in, drive-through, or no-contact delivery!</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-star"></i>
+                            <span>5.0 Google Rating</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Open 4 PM Daily</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-rupee-sign"></i>
+                            <span>₹600-800 per person</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Drive-thru Available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/logo.png" alt="Classic Rider Cafe Front View">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">🍗 Menu Highlights</h2>
+            <p class="section-subtitle">Customer favorites you must try!</p>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="images/shawarma.jpeg" alt="Shawarma" class="menu-image">
+                    <h3>Classic Shawarma</h3>
+                    <div class="price">₹180</div>
+                    <p>Perfectly grilled with authentic spices, fresh veggies, and signature sauce</p>
+                </div>
+                <div class="menu-card">
+                    <img src="images/chicken.png" alt="Grilled Chicken" class="menu-image">
+                    <h3>Grilled Chicken</h3>
+                    <div class="price">₹250</div>
+                    <p>Tender chicken marinated overnight, grilled to juicy perfection</p>
+                </div>
+                <div class="menu-card">
+                    <img src="images/peripei.jpeg" alt="Peri Peri Chicken" class="menu-image">
+                    <h3>Peri Peri Chicken</h3>
+                    <div class="price">₹280</div>
+                    <p>Spicy African-style peri peri marination with extra kick!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <h2 class="section-title">⭐ Customer Reviews</h2>
+            <p class="section-subtitle">Don't just take our word for it</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-avatar">UN</div>
+                    <div class="review-content">
+                        <h4>Uday Naidu</h4>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                        <p class="review-text">"Shawarma, grilled chicken, and peri peri chicken—the taste is fantastic! Top-notch hygiene and quick service. Must try everything!"</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-avatar">SK</div>
+                    <div class="review-content">
+                        <h4>Shiva Kumar</h4>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                        <p class="review-text">"Excellent food and services by Mr Maruthi Reddy. One of the best experiences in Tadipatri hotel industry!"</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-avatar">SC</div>
+                    <div class="review-content">
+                        <h4>Siva Chaitanya</h4>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                        <p class="review-text">"Good food and good taste. Service: 5⭐ Food: 5⭐ Overall amazing experience!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">📍 Visit Us</h2>
+            <p class="section-subtitle">15/144, CB Rd, opposite JCJ COURT, Gandhi Katta, Tadipatri</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p><strong>15/144, CB Road</strong><br>Opposite JCJ Court<br>Gandhi Katta, Tadipatri<br>Andhra Pradesh 515411</p>
+                    <a href="https://maps.app.goo.gl/iWn2Y2P9WebdYwMs5" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
+                        <i class="fas fa-directions"></i> Open in Google Maps
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Opening Hours</h3>
+                    <p><strong>Open from 4 PM</strong><br>Thursday - Sunday<br>(Closed other days)</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Services</h3>
+                    <p>🍽️ Dine-in<br>🚗 Drive-through<br>📦 No-contact delivery<br>💰 ₹600-800/person</p>
+                </div>
+            </div>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipM4bYkZqZqZqZqZqZqZqZqZqZqZqZqZqZqZqZq=w1600" alt="Classic Rider Cafe Location" class="cafe-hero-image">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="font-size: 2.2rem; margin-bottom: 1.5rem;">
+                <i class="fas fa-motorcycle"></i>
+                Classic Rider Cafe
+            </div>
+            <p style="margin-bottom: 1rem;">🏍️ 15/144, CB Rd, Gandhi Katta, Tadipatri, AP 515411</p>
+            <p><a href="https://maps.app.goo.gl/iWn2Y2P9WebdYwMs5" target="_blank" style="color: #ff6b35; font-weight: 600;">📱 View on Google Maps | 5.0⭐ (9 Reviews)</a></p>
+            <div class="social-links">
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://maps.app.goo.gl/iWn2Y2P9WebdYwMs5" title="Google Maps"><i class="fas fa-map-marked-alt"></i></a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">© 2024 Classic Rider Cafe - All Rights Reserved | Proudly Serving Tadipatri</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.style.background = window.scrollY > 100 ? 
+                'rgba(255, 107, 53, 0.95) backdrop-blur(20px)' : 
+                'linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)';
+        });
+
+        // Gallery click to open full image
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                window.open(img.src, '_blank');
+            });
+        });
+
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('.menu-card, .review-card, .gallery-item, .feature-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
